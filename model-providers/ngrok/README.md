@@ -1,20 +1,25 @@
 # ngrok AI Gateway for Hermes
 
-Use the [ngrok AI Gateway](https://ngrok.ai) as a Hermes model provider. One access key gets you every model provider configured on your gateway, with failover and key rotation handled by ngrok.
+Use the [ngrok AI Gateway](https://ngrok.ai) as a model provider in Hermes. The gateway gives you one access key for all the model providers you've set up in ngrok, with failover and key rotation. See the [AI Gateway docs](https://ngrok.com/docs/ai-gateway/overview) to set up providers, keys and models.
+
+## Install
 
 ```bash
 hermes plugins install ngrok-ai-gateway
 ```
 
-The installer asks for your access key (`ng-…`, from [app.ngrok.ai/keys](https://app.ngrok.ai/keys)) and saves it as `NGROK_AI_GATEWAY_KEY`. Then choose **ngrok AI Gateway** in `hermes model`, pass `--provider ngrok`, or set `model.provider: ngrok`. Aliases: `ngrok-ai`, `ngrok-ai-gateway`.
+Enter your access key from [app.ngrok.ai/keys](https://app.ngrok.ai/keys) when prompted. Hermes saves it as `NGROK_AI_GATEWAY_KEY`.
 
-- **Live model list** from your gateway's `/v1/models`. No hardcoded fallback list, so if the gateway is briefly unreachable the picker is empty rather than wrong.
-- **Self-hosted endpoint:** set `NGROK_AI_GATEWAY_BASE_URL` to use your own gateway instead of `https://gateway.ngrok.ai/v1`.
-- **Error mapping:** an unrouted model is treated as *model not found*. Access-policy and upstream-provider-key failures fall back without telling you your ngrok key is bad. Running out of credit is *billing*. Auth, rate-limit and 5xx errors follow Hermes' normal handling.
-- **Auxiliary tasks** (compression, titles, vision) use your main model unless you set `auxiliary.<task>.provider: ngrok` and `model:` in `config.yaml`.
-- **Attribution:** every request carries `User-Agent: hermes-agent/<version> (ngrok-plugin)`.
-- **Per profile:** plugins install per Hermes profile. Install again in each profile that should see ngrok.
+Plugins are installed per Hermes profile, so install it again in any other profile that needs it.
 
-**Disclosure:** the plugin registers one provider profile. Hermes sends model requests and the model-list probe to `https://gateway.ngrok.ai/v1` (or `NGROK_AI_GATEWAY_BASE_URL`) with your access key. The plugin itself makes no other network calls, reads no files and starts no background processes.
+## Use
 
-Full documentation: [github.com/ngrok/hermes-ngrok](https://github.com/ngrok/hermes-ngrok#readme)
+Select **ngrok AI Gateway** in `hermes model`, or pass `--provider ngrok`. The model list comes from your gateway.
+
+To use a different gateway endpoint, set `NGROK_AI_GATEWAY_BASE_URL`. The default is `https://gateway.ngrok.ai/v1`.
+
+Background tasks like compression and title generation use your main model. To use a cheaper model for them, set `auxiliary.<task>.provider: ngrok` and `auxiliary.<task>.model` in `config.yaml`.
+
+## Disclosure
+
+The plugin sends chat and model-list requests to the gateway endpoint with your access key. Each request has a `User-Agent: hermes-agent/<version> (ngrok-plugin)` header. The plugin makes no other network requests, doesn't read files, and doesn't run background processes.

@@ -1,7 +1,7 @@
 name: ngrok-ai-gateway
 kind: model-provider
 version: 1.0.0
-description: ngrok AI Gateway — one access key for every model provider, with failover and key rotation
+description: Use the ngrok AI Gateway as a Hermes model provider
 author: ngrok
 requires_hermes: ">=0.21.6"
 requires_env:

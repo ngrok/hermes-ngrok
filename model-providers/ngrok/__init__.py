@@ -101,7 +101,7 @@ ngrok = ProviderProfile(
     # Never "ai-gateway"/"vercel"/"ai_gateway"/"aigateway": Hermes' built-in Vercel provider owns those.
     aliases=("ngrok-ai", "ngrok-ai-gateway"),
     display_name="ngrok AI Gateway",
-    description="ngrok AI Gateway — one key for every provider, with failover and key rotation",
+    description="One access key for all your model providers, with failover",
     signup_url="https://ngrok.ai",
     auth_type="api_key",
     # Key first; the *_BASE_URL entry is Hermes' user base-URL override.

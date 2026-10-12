@@ -3,12 +3,12 @@ repo: https://github.com/ngrok/hermes-ngrok
 subdir: model-providers/ngrok
 # Release step: replace with the full (quoted) SHA of the release commit on ngrok/hermes-ngrok.
 sha: "0000000000000000000000000000000000000000"
-description: "The ngrok AI Gateway (ngrok.ai) as a Hermes model provider — one access key for every model provider, with failover and key rotation. Live model list from your gateway, an identifying User-Agent on every request, and gateway errors (unrouted model, access-policy and upstream-key failures, out of credit) mapped onto Hermes recovery. Disclosure — sends model requests and the model-list probe to https://gateway.ngrok.ai/v1 (or NGROK_AI_GATEWAY_BASE_URL) with your access key; no other network calls, files or background processes."
+description: "ngrok AI Gateway: one access key for every model provider, with failover and key rotation. Disclosure: sends model requests to https://gateway.ngrok.ai/v1 (or NGROK_AI_GATEWAY_BASE_URL) with your access key."
 maintainer: ngrok
 tier: community
 category: models
 requires_hermes: ">=0.21.6"
-docs_url: https://github.com/ngrok/hermes-ngrok#readme
+docs_url: https://ngrok.com/docs/ai-gateway/overview
 version: "1.0.0"
 platforms: []
 capabilities:
