@@ -1,0 +1,11 @@
+name: ngrok-ai-gateway
+kind: model-provider
+version: 1.0.0
+description: ngrok AI Gateway — one access key for every model provider, with failover and key rotation
+author: ngrok
+requires_hermes: ">=0.21.6"
+requires_env:
+  - name: NGROK_AI_GATEWAY_KEY
+    description: ngrok AI Gateway access key (starts with ng-)
+    url: https://ngrok.ai
+    secret: true

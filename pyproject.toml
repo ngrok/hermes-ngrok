@@ -1,0 +1,17 @@
+# Test tooling only. The plugin itself has no dependencies and is not pip-installable:
+# Hermes installs it from model-providers/ngrok via its plugin catalog.
+[project]
+name = "hermes-ngrok-tests"
+version = "0"
+requires-python = ">=3.9"
+
+[dependency-groups]
+dev = ["pytest>=8,<9", "pyyaml>=6,<7"]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["tests"]
+addopts = "-p no:cacheprovider"
