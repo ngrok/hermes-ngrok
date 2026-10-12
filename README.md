@@ -1,6 +1,6 @@
 # hermes-ngrok
 
-A Hermes model-provider plugin for the [ngrok AI Gateway](https://ngrok.ai).
+A Hermes model-provider plugin for the [ngrok AI Gateway](https://ngrok.ai). See the [AI Gateway docs](https://ngrok.com/docs/ai-gateway/overview) to set up providers, keys and models.
 
 ## Install
 
@@ -12,7 +12,7 @@ Enter your access key (`ng-…`, from [app.ngrok.ai/keys](https://app.ngrok.ai/k
 
 ## Use
 
-Select **ngrok AI Gateway** in `hermes model`, or use `--provider ngrok`. The models come live from your gateway. Model IDs follow the gateway's [naming](https://ngrok.com/docs/ai-gateway/concepts/models), e.g. `openai:gpt-4o`.
+Select **ngrok AI Gateway** in `hermes model`, or use `--provider ngrok`. The model list comes from your gateway. Model IDs follow the gateway's [naming](https://ngrok.com/docs/ai-gateway/concepts/models), for example `openai:gpt-4o`.
 
 To use your own gateway endpoint, set `NGROK_AI_GATEWAY_BASE_URL` (default `https://gateway.ngrok.ai/v1`).
 
