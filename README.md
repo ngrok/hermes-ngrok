@@ -8,7 +8,7 @@ A Hermes model-provider plugin for the [ngrok AI Gateway](https://ngrok.ai).
 hermes plugins install ngrok-ai-gateway
 ```
 
-Enter your access key (`ng-…`, from [app.ngrok.ai](https://app.ngrok.ai)) when prompted. Hermes saves it as `NGROK_AI_GATEWAY_KEY`.
+Enter your access key (`ng-…`, from [app.ngrok.ai/keys](https://app.ngrok.ai/keys)) when prompted. Hermes saves it as `NGROK_AI_GATEWAY_KEY`.
 
 ## Use
 

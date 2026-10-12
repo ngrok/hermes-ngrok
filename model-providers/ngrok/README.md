@@ -6,7 +6,7 @@ Use the [ngrok AI Gateway](https://ngrok.ai) as a Hermes model provider. One acc
 hermes plugins install ngrok-ai-gateway
 ```
 
-The installer asks for your access key (`ng-…`, from [app.ngrok.ai](https://app.ngrok.ai)) and saves it as `NGROK_AI_GATEWAY_KEY`. Then choose **ngrok AI Gateway** in `hermes model`, pass `--provider ngrok`, or set `model.provider: ngrok`. Aliases: `ngrok-ai`, `ngrok-ai-gateway`.
+The installer asks for your access key (`ng-…`, from [app.ngrok.ai/keys](https://app.ngrok.ai/keys)) and saves it as `NGROK_AI_GATEWAY_KEY`. Then choose **ngrok AI Gateway** in `hermes model`, pass `--provider ngrok`, or set `model.provider: ngrok`. Aliases: `ngrok-ai`, `ngrok-ai-gateway`.
 
 - **Live model list** from your gateway's `/v1/models`. No hardcoded fallback list, so if the gateway is briefly unreachable the picker is empty rather than wrong.
 - **Self-hosted endpoint:** set `NGROK_AI_GATEWAY_BASE_URL` to use your own gateway instead of `https://gateway.ngrok.ai/v1`.
