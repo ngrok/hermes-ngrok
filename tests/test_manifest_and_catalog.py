@@ -36,8 +36,7 @@ def test_manifest(manifest):
     (env,) = manifest["requires_env"]
     assert env["name"] == "NGROK_AI_GATEWAY_KEY"
     assert env["secret"] is True
-    assert env["description"]
-    assert env["url"].startswith("https://ngrok.ai")
+    assert env["url"] == "https://app.ngrok.ai/keys"
 
 
 def test_entry_matches_manifest(manifest, entry):

@@ -6,6 +6,5 @@ author: ngrok
 requires_hermes: ">=0.21.6"
 requires_env:
   - name: NGROK_AI_GATEWAY_KEY
-    description: ngrok AI Gateway access key (starts with ng-)
-    url: https://ngrok.ai
+    url: https://app.ngrok.ai/keys
     secret: true
